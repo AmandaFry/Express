@@ -13,10 +13,17 @@ app.get('/', function (req, res){
 	res.render("index");
 });
 
-// app.get('/', function(request, response){
-// 	response.send("Hello Amanda");
-// });
 
+app.get("/users", function (request, response){
+    // hard-coded user data
+    var users_array = [
+        {name: "Michael", email: "michael@codingdojo.com"}, 
+        {name: "Jay", email: "jay@codingdojo.com"}, 
+        {name: "Brendan", email: "brendan@codingdojo.com"}, 
+        {name: "Andrew", email: "andrew@codingdojo.com"}
+    ];
+    response.render('users', {users: users_array});
+})
 
 app.listen(8000, function(){
 	console.log("Listening on port 8000")
